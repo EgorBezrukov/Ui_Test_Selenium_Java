@@ -1,0 +1,12 @@
+helpDesk\TicketPage.class
+swagLabsShop\LoginPage.class
+core\BaseSeleniumTest.class
+modifier\StringModifier.class
+swagLabsShop\ProductsPage.class
+swagLabsShop\SwagLabsTests.class
+helpDesk\LoginPage.class
+helpDesk\HelpDeskTest.class
+helpDesk\MainPage.class
+helpDesk\TicketsPage.class
+core\BaseSeleniumPage.class
+readProperties\ConfigProvider.class

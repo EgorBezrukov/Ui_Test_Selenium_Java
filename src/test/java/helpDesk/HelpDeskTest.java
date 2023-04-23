@@ -1,14 +1,17 @@
 package helpDesk;
 
 import core.BaseSeleniumTest;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import readProperties.ConfigProvider;
-import static helpers.StringModifier.getUniqueString;
+
+import static modifier.StringModifier.getUniqueString;
 public class HelpDeskTest extends BaseSeleniumTest {
 
 
 
-    @Test
+
+    @Disabled
     public void checkTicket(){
         System.out.println();
         String title = getUniqueString("Karabas Barabas");

@@ -34,7 +34,7 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement submitButton;
 
     @FindBy(id="userDropdown")
-    private WebElement bottonUserDropdown;
+    private WebElement buttonUserDropdown;
 
     public MainPage() {
         driver.get(ConfigProvider.URL);
@@ -53,7 +53,7 @@ public class MainPage extends BaseSeleniumPage {
         return this;
     }
     public LoginPage openLoginPage(){
-        bottonUserDropdown.click();
+        buttonUserDropdown.click();
         return new LoginPage();
     }
 }

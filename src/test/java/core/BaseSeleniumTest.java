@@ -1,27 +1,29 @@
 package core;
 
+import com.typesafe.config.Config;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 abstract public class BaseSeleniumTest {
     protected WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void setUp () {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         BaseSeleniumPage.setDriver(driver);
     }
 
-    @After
+    @AfterEach
     public void tearDown (){
         driver.close();
         //driver.quit();
