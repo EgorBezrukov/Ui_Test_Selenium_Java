@@ -1,6 +1,7 @@
 package swagLabsShop;
 
 import core.BaseSeleniumPage;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -23,14 +24,16 @@ public class LoginPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Выполнение авторизации")
     public ProductsPage auth(String login, String password) {
         loginField.sendKeys(login);
         passwordField.sendKeys(password, Keys.ENTER);
         return new ProductsPage();
     }
 
-    public void checkErrorMessage(String message){
+    @Step("Проверяем, что отображаемое сообщение равно ожидаемому")
+    public void checkErrorMessage(String message) {
         String result = errorMessage.getText();
-        Assertions.assertEquals(result,message);
+        Assertions.assertEquals(result, message);
     }
 }
